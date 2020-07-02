@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import CabinetKey from '../CabinetKey';
 import CabinetAccount from '../CabinetAccount';
-import CabinetPromoCode from '../CabinetPromoCode';
+// import CabinetPromoCode from '../CabinetPromoCode';
 import AutoFirstMessage from '../AutoFirstMessage';
 import { useTranslation } from 'react-i18next';
 import './cabinet.scss';
@@ -39,12 +39,12 @@ function LegacyCabinet () {
                     </h2>
                     <AutoFirstMessage />
                 </div>
-                <div className="cabinet-block">
-                    <h2 className="cabinet-block__header">
-                        {t('cabinet.myPromoCode')}
-                    </h2>
-                    <CabinetPromoCode />
-                </div>
+                {/*<div className="cabinet-block">*/}
+                {/*    <h2 className="cabinet-block__header">*/}
+                {/*        {t('cabinet.myPromoCode')}*/}
+                {/*    </h2>*/}
+                {/*    <CabinetPromoCode />*/}
+                {/*</div>*/}
             </div>
         </div>
     );

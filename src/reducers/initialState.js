@@ -3,10 +3,9 @@ const initialState = {
         isSignedIn: false,
         key: '',
         email: '',
-        // license: 'STANDART',
-        license: 'PREMIUM',
+        license: 'STANDART',
         licenseTo: '',
-        message: 'asdasdasdas',
+        message: '',
         phoneNumber: '',
         promoCode: '',
         token: ''

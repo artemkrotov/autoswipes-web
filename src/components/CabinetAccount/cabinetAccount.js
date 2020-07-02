@@ -8,7 +8,7 @@ function LegacyCabinetAccount() {
 
     const user = useSelector(state => state.user);
 
-    const inp = user.license === 'STANDART'
+    const inp = user.license.type === 'STANDART'
         ? (
             <React.Fragment>
                 <input
@@ -31,7 +31,7 @@ function LegacyCabinetAccount() {
                     onChange={()=>{}}
                     value={t('cabinet.premium')} />
                 <div className="cabinet-input-group__subinput">
-                    {t('cabinet.licenseTo')} {user.licenseTo}
+                    {t('cabinet.licenseTo')} {user.license.finish}
                 </div>
                 <Link to="/rates" className="cabinet-input-group__buy">
                     {t('cabinet.renew')}

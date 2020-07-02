@@ -32,7 +32,10 @@ function LegacyLogin() {
                         type: 'PAST_USER',
                         payload: {
                             isSignedIn: true,
-                            email: response.email
+                            email: response.email,
+                            license: response.license,
+                            message: response.message,
+                            key: response.token
                         }
                     });
 
