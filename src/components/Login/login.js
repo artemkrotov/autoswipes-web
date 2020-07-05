@@ -1,6 +1,6 @@
 import React, { Suspense, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import Input from '../Input/Input';
+import Input from '../Input';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { login, getUser } from '../../helpers/api';
@@ -17,11 +17,6 @@ function LegacyLogin() {
 
     const handleFormSubmit = () => {
         const loginRequest = {email, password};
-
-        // var xhr = new XMLHttpRequest();
-        // xhr.open('GET', 'https://api.autoswipes.com/api/customer/current', false);
-        // xhr.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5IiwiaWF0IjoxNTkzNjE5OTY5LCJleHAiOjE1OTQ0ODM5Njl9.dpfRNsx7s4GiUcZelkh80SS_shmwqNpSuYQuXvnfopvtox5RFS2yvtalpNPT-6R4l5taZra_Z_krteU8rWeanQ');
-        // xhr.send();
 
         login(loginRequest)
             .then(async response => {
@@ -60,7 +55,7 @@ function LegacyLogin() {
                         <h2 className="auth__header">{t('auth.login')}</h2>
                         <Input
                             inputType={"text"}
-                            title={"email"}
+                            title={t('auth.labelEmail')}
                             name={"email"}
                             value={email}
                             placeholder={t('auth.enterEmail')}
@@ -68,14 +63,14 @@ function LegacyLogin() {
                         />
                         <Input
                             inputType={"password"}
-                            title={"password"}
+                            title={t('auth.labelPassword')}
                             name={"password"}
                             value={password}
                             placeholder={t('auth.enterPassword')}
                             handleChange={e => setPassword(e.target.value)}
                         />
                         <button className="auth__button" onClick={handleFormSubmit}>{t('auth.buttonLogin')}</button>
-                        <Link to="/register" className="auth__link">Забыл пароль?</Link>
+                        <Link to="/forgot" className="auth__link">{t('auth.forgotLink')}</Link>
                         <Link to="/register" className="auth__link">{t('auth.buttonRegister')}</Link>
                         <AuthSocials />
                     </div>

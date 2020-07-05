@@ -12,8 +12,6 @@ const request = (options) => {
     const defaults = {headers: headers};
     options = Object.assign({}, defaults, options);
 
-    // console.log(options);
-
     return fetch(options.url, options)
         .then(response =>
             response.json().then(json => {
@@ -36,6 +34,14 @@ export function getUser() {
     });
 }
 
+export function changePassword(passwordRequest) {
+    return request({
+        url: AUTH_BASE_URL + "/auth/updatePasword",
+        method: 'POST',
+        body: JSON.stringify(passwordRequest)
+    });
+}
+
 export function login(loginRequest) {
     return request({
         url: AUTH_BASE_URL + "/auth/login",
@@ -52,12 +58,10 @@ export function signup(signupRequest) {
     });
 }
 
-export function updateMsg(message) {
+export function updateMsg(messageRequest) {
     return request({
         url: API_BASE_URL + "/api/customer/message",
         method: 'PUT',
-        body: {
-            messageId: message
-        }
+        body: JSON.stringify(messageRequest)
     });
 }

@@ -1,5 +1,5 @@
 import React, { Suspense, useState } from 'react';
-import Input from '../Input/Input';
+import Input from '../Input';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import AuthSocials from '../AuthSocials';

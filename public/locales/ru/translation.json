@@ -7,7 +7,8 @@
     "faq": "FAQ",
     "rates": "Тарифы",
     "publicOffer": "Публичная оферта",
-    "privacyPolicy": "Политика конфиденциальности"
+    "privacyPolicy": "Политика конфиденциальности",
+    "quit": "Выход"
   },
   "toMain": "На главную",
   "cabinet": {
@@ -30,7 +31,15 @@
     "myPromoCode": "Мой промокод",
     "share": "Поделись этим кодом с другом и он сэкономит до 500 руб.",
     "available": "Доступно\n<br />\nдля Premium!",
-    "availableButton": "Купить PREMIUM"
+    "availableButton": "Купить PREMIUM",
+    "changePassword": "Изменить пароль"
+  },
+  "settings": {
+    "changePassword": "Изменение пароля",
+    "enterCurrentPassword": "Введите старый пароль",
+    "enterNewPassword": "Введите новый пароль",
+    "confirmNewPassword": "Повторите новый пароль",
+    "change": "Изменить"
   },
   "auth": {
     "login": "Авторизация",
@@ -50,7 +59,11 @@
     "labelPhone": "Номер телефона",
     "errorFetch": "Упс! Что-то пошло не так. Попробуйте еще раз!",
     "validationFetch": "Проверьте правильность введенных данных!",
-    "successFetch": "Вы успешно вошли в систему!"
+    "successFetch": "Вы успешно вошли в систему!",
+    "forgotLink": "Забыл пароль?",
+    "forgotHeader": "Забыли пароль?",
+    "forgotSubHeader": "Мы вышлем вам инструкцию по восстановлению пароля на ваш e-mail",
+    "forgotSend": "Отправить"
   },
   "rates": {
     "saving1": "Экономия (~2 000 руб)",

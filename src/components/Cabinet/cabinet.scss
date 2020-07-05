@@ -100,6 +100,12 @@
   border-radius: 7px;
   text-transform: uppercase;
   letter-spacing: .03em;
+  transition: box-shadow .3s;
+  outline: none;
+
+  &:focus {
+    box-shadow: 0 0 15px 0 rgba(#eb4c64, .25);
+  }
 }
 
 .cabinet-subtext {
@@ -144,6 +150,8 @@
       text-align: center;
       padding: 10px 0;
       margin-top: 5px;
+      outline: none;
+      pointer-events: none;
 
       &--prem {
         background-color: rgba(#ec446f, .1);
@@ -202,6 +210,12 @@
   font-size: 14px;
   line-height: 23px;
   resize: vertical;
+  outline: none;
+  transition: box-shadow .3s;
+
+  &:focus {
+    box-shadow: 0 0 15px 0 rgba(#eb4c64, .25);
+  }
 }
 
 .auth {
@@ -212,6 +226,14 @@
     font-size: 30px;
     margin-top: 20px;
     margin-bottom: 10px;
+    text-align: center;
+  }
+
+  &__sub-header {
+    color: rgba(#3c5058, .7);
+    font-size: 15px;
+    max-width: 70%;
+    margin: 0 auto;
     text-align: center;
   }
 

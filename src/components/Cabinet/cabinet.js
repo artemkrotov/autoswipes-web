@@ -6,6 +6,7 @@ import AutoFirstMessage from '../AutoFirstMessage';
 import { useTranslation } from 'react-i18next';
 import './cabinet.scss';
 import { ReactComponent as Arrow } from './arrow.svg';
+import {Link} from "react-router-dom";
 
 function LegacyCabinet () {
     const { t } = useTranslation();
@@ -45,6 +46,9 @@ function LegacyCabinet () {
                 {/*    </h2>*/}
                 {/*    <CabinetPromoCode />*/}
                 {/*</div>*/}
+                <Link to="/settings" className="cabinet-input-group__buy">
+                    {t('cabinet.changePassword')}
+                </Link>
             </div>
         </div>
     );

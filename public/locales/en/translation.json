@@ -7,7 +7,8 @@
     "faq": "FAQ",
     "rates": "Rates",
     "publicOffer": "Public offer",
-    "privacyPolicy": "Privacy policy"
+    "privacyPolicy": "Privacy policy",
+    "quit": "Quit"
   },
   "toMain": "To main",
   "cabinet": {
@@ -30,7 +31,15 @@
     "myPromoCode": "My promocode",
     "share": "Share this code with a friend and it will save up to 500 rubles.",
     "available": "Available\n<br />\nfor Premium!",
-    "availableButton": "Buy PREMIUM"
+    "availableButton": "Buy PREMIUM",
+    "changePassword": "Change Password"
+  },
+  "settings": {
+    "changePassword": "Change Password",
+    "enterCurrentPassword": "Enter old password",
+    "enterNewPassword": "Enter a new password",
+    "confirmNewPassword": "Repeat new password",
+    "change": "Edit"
   },
   "auth": {
     "login": "Login",
@@ -50,7 +59,11 @@
     "labelPhone": "Phone number",
     "errorFetch": "Oops! Something went wrong. Please try again!",
     "validationFetch": "Check the correctness of the entered data!",
-    "successFetch": "You're successfully logged in!"
+    "successFetch": "You're successfully logged in!",
+    "forgotLink": "Forgot password?",
+    "forgotHeader": "Forgot password?",
+    "forgotSubHeader": "We will send you the password recovery instructions to your e-mail",
+    "forgotSend": "Send"
   },
   "rates": {
     "saving1": "Saving (~2 000 rub)",

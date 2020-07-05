@@ -17,6 +17,9 @@ const Auth = () => {
                 <Link to="/" className="header__auth-link">
                     {t('navigation.lk')}
                 </Link>
+                <Link to="/quit" className="header__auth-link header__auth-link--quit">
+                    {t('navigation.quit')}
+                </Link>
             </div>
         );
     } else {

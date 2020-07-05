@@ -3,6 +3,7 @@ import { useTranslation, Trans } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { updateMsg } from '../../helpers/api';
+import Alert from 'react-s-alert';
 import './autoFirstMessage.scss';
 
 const NonPremium = () => {
@@ -41,8 +42,10 @@ function LegacyAutoFirstMessage() {
     const handleSubmit = e => {
         e.preventDefault();
 
-        updateMsg(message).then(res => {
+        updateMsg({messageId: message}).then(res => {
             console.log(res);
+        }).catch(()=>{
+            Alert.error('Error CORS back-end');
         });
     };
 

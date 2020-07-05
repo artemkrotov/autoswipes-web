@@ -7,6 +7,8 @@ import Rates from "../pages/rates";
 import Login from "../pages/login";
 import Register from "../pages/register";
 import Quit from "../pages/quit";
+import Settings from "../pages/settings";
+import Forgot from "../pages/forgot";
 import OAuth2RedirectHandler from "../pages/oauth2";
 import { getUser } from "../helpers/api";
 import Alert from "react-s-alert";
@@ -52,6 +54,7 @@ function LegacyRoutes () {
             >
                 <Route exact path='/' component={ Cabinet } />
                 <Route path='/cabinet' component={ Cabinet } />
+                <Route path='/settings' component={ Settings } />
                 <Route path="/rates" component={ Rates } />
                 <Route path="/quit" component={ Quit } />
                 <Route path="*"><Redirect to="/" /></Route>
@@ -70,6 +73,7 @@ function LegacyRoutes () {
                 <Route path='/register' component={ Register } />
                 <Route path="/oauth2/redirect" component={ OAuth2RedirectHandler } />
                 <Route path="/rates" component={ Rates } />
+                <Route path="/forgot" component={ Forgot } />
                 <Route path="/quit" component={ Quit } />
                 <Route path="*"><Redirect to="/" /></Route>
             </AnimatedSwitch>
