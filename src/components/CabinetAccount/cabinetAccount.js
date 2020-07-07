@@ -23,36 +23,55 @@ function LegacyCabinetAccount() {
         }
     }
 
-    const inp = user.license.type === 'STANDART'
-        ? (
-            <React.Fragment>
-                <input
-                    type="text"
-                    id="typeAccount"
-                    className="cabinet-input-group__input-fill"
-                    onChange={()=>{}}
-                    value={t('cabinet.free')} />
-                <Link to="/rates" className="cabinet-input-group__buy">
-                    {t('cabinet.buy')}
-                </Link>
-            </React.Fragment>
-        )
-        : (
-            <React.Fragment>
-                <input
-                    type="text"
-                    id="typeAccount"
-                    className="cabinet-input-group__input-fill cabinet-input-group__input-fill--prem"
-                    onChange={()=>{}}
-                    value={t('cabinet.premium')} />
-                <div className="cabinet-input-group__subinput">
-                    {t('cabinet.licenseTo')} {convertTime()}
-                </div>
-                <Link to="/rates" className="cabinet-input-group__buy">
-                    {t('cabinet.renew')}
-                </Link>
-            </React.Fragment>
-        )
+    const inp = () => {
+        console.log(user.license.type);
+        if(user.license.type === 'STANDART') {
+            return (
+                <React.Fragment>
+                    <input
+                        type="text"
+                        id="typeAccount"
+                        className="cabinet-input-group__input-fill"
+                        onChange={()=>{}}
+                        value={t('cabinet.free')} />
+                    <Link to="/rates" className="cabinet-input-group__buy">
+                        {t('cabinet.buy')}
+                    </Link>
+                </React.Fragment>
+            );
+        } else if(user.license.type === 'PREMIUM') {
+            return (
+                <React.Fragment>
+                    <input
+                        type="text"
+                        id="typeAccount"
+                        className="cabinet-input-group__input-fill cabinet-input-group__input-fill--prem"
+                        onChange={()=>{}}
+                        value={t('cabinet.premium')} />
+                    <div className="cabinet-input-group__subinput">
+                        {t('cabinet.licenseTo')} {convertTime()}
+                    </div>
+                    <Link to="/rates" className="cabinet-input-group__buy">
+                        {t('cabinet.renew')}
+                    </Link>
+                </React.Fragment>
+            )
+        } else {
+            return (
+                <React.Fragment>
+                    <input
+                        type="text"
+                        id="typeAccount"
+                        className="cabinet-input-group__input-fill"
+                        onChange={()=>{}}
+                        value={'Trial'} />
+                    <Link to="/rates" className="cabinet-input-group__buy">
+                        {t('cabinet.buy')}
+                    </Link>
+                </React.Fragment>
+            );
+        }
+    }
 
     return (
         <React.Fragment>
@@ -69,7 +88,7 @@ function LegacyCabinetAccount() {
                 <label className="cabinet-input-group__label">
                     {t('cabinet.typeAccount')}
                 </label>
-                {inp}
+                {inp()}
             </div>
         </React.Fragment>
     );

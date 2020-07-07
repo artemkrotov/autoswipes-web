@@ -97,7 +97,7 @@
     "PHONE_NUMBER_INVALID": "Номер телефона введен не верно",
     "PASSWORD_CONFIRM_IS_DIFFERENT": "Подтверждение пароля отличается",
     "LOGIN_ERROR": "Неправильный e-mail или пароль",
-    "PASSWORD_INCORRECT": "Неверный пароль",
+    "CURRENT_PASSWORD_INCORRECT": "Неверный пароль",
     "MESSAGE_MAX_LENGTH_255": "255 макс. кол-во символов"
   }
 }

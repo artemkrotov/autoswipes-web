@@ -96,7 +96,7 @@
     "PHONE_NUMBER_INVALID": "Phone number invalid",
     "PASSWORD_CONFIRM_IS_DIFFERENT": "Password confirm is different",
     "LOGIN_ERROR": "Invalid email or password",
-    "PASSWORD_INCORRECT": "Incorrect password",
+    "CURRENT_PASSWORD_INCORRECT": "Incorrect password",
     "MESSAGE_MAX_LENGTH_255": "255 max char length"
   }
 }
