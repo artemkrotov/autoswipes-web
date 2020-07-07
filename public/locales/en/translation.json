@@ -3,12 +3,13 @@
     "register": "Registration",
     "login": "Login",
     "lk": "Cabinet",
+    "main": "Main",
     "howItWorks": "How it works",
     "faq": "FAQ",
     "rates": "Rates",
     "publicOffer": "Public offer",
     "privacyPolicy": "Privacy policy",
-    "quit": "Quit"
+    "quit": "Log out"
   },
   "toMain": "To main",
   "cabinet": {

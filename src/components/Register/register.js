@@ -18,7 +18,9 @@ function LegacyRegister() {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [errors, setErrors] = useState({});
 
-    const handleFormSubmit = () => {
+    const handleFormSubmit = e => {
+        e.preventDefault();
+
         const signupRequest = {email, password, passwordConfirm, phoneNumber};
 
         signup(signupRequest)
@@ -41,7 +43,7 @@ function LegacyRegister() {
                             isSignedIn: true,
                             email: response.email,
                             license: response.license,
-                            message: response.message,
+                            message: response.message || '',
                             key: response.token
                         }
                     });
@@ -63,7 +65,7 @@ function LegacyRegister() {
             <div className="cabinet-wrap__bg">registration</div>
             <div className="cabinet-wrap__inner">
                 <div className="cabinet-block">
-                    <div className="auth">
+                    <form onSubmit={handleFormSubmit} className="auth">
                         <h2 className="auth__header">{t('auth.register')}</h2>
                         <Input
                             inputType={"text"}
@@ -102,10 +104,10 @@ function LegacyRegister() {
                             handleChange={e => setPhoneNumber(e.target.value)}
                             mask={"+7 (999) 999-9999"}
                         />
-                        <button className="auth__button" onClick={handleFormSubmit}>{t('auth.buttonRegister')}</button>
+                        <button className="auth__button">{t('auth.buttonRegister')}</button>
                         <Link to="/login" className="auth__link">{t('auth.buttonLogin')}</Link>
                         <AuthSocials />
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

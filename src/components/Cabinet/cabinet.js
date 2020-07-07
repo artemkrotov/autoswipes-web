@@ -46,9 +46,14 @@ function LegacyCabinet () {
                 {/*    </h2>*/}
                 {/*    <CabinetPromoCode />*/}
                 {/*</div>*/}
-                <Link to="/settings" className="cabinet-input-group__buy">
-                    {t('cabinet.changePassword')}
-                </Link>
+                <div className="cabinet-bottom">
+                    <Link to="/settings" className="cabinet-bottom__button">
+                        {t('cabinet.changePassword')}
+                    </Link>
+                    <Link to="/quit" className="cabinet-bottom__button cabinet-bottom__button--quit">
+                        {t('navigation.quit')}
+                    </Link>
+                </div>
             </div>
         </div>
     );

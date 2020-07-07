@@ -17,9 +17,6 @@ const Auth = () => {
                 <Link to="/" className="header__auth-link">
                     {t('navigation.lk')}
                 </Link>
-                <Link to="/quit" className="header__auth-link header__auth-link--quit">
-                    {t('navigation.quit')}
-                </Link>
             </div>
         );
     } else {
@@ -59,6 +56,11 @@ const Navigation = withRouter(({ history }) => {
                             <img src={logotypeColor} className="slide-menu__logotype-image" alt="Logotype autoswipe"/>
                         </div>
                         <ul className="slide-menu__items">
+                            <li className="slide-menu__item">
+                                <a href="https://autoswipes.com/" className="slide-menu__link">
+                                    {t('navigation.main')}
+                                </a>
+                            </li>
                             <li className="slide-menu__item">
                                 <a href="https://autoswipes.com/how" className="slide-menu__link">
                                     {t('navigation.howItWorks')}
@@ -105,6 +107,9 @@ function LegacyHeader() {
             <header id="header" className="header">
                 <div className="header__inner container">
                     <div className="header__left">
+                        <a href="https://autoswipes.com/" className="header__link">
+                            {t('navigation.main')}
+                        </a>
                         <a href="https://autoswipes.com/how" className="header__link">
                             {t('navigation.howItWorks')}
                         </a>

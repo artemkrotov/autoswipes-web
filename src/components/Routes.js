@@ -30,7 +30,7 @@ function LegacyRoutes () {
                         isSignedIn: true,
                         email: response.email,
                         license: response.license,
-                        message: response.message,
+                        message: response.message || '',
                         key: response.token
                     }
                 });
