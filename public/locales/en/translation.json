@@ -2,11 +2,11 @@
   "navigation": {
     "register": "Registration",
     "login": "Login",
-    "lk": "Cabinet",
+    "lk": "My account",
     "main": "Main",
     "howItWorks": "How it works",
     "faq": "FAQ",
-    "rates": "Rates",
+    "rates": "Pricing",
     "publicOffer": "Public offer",
     "privacyPolicy": "Privacy policy",
     "quit": "Log out"
@@ -24,7 +24,7 @@
     "renew": "Renew license",
     "licenseTo": "Valid until",
     "autoFirstMessage": "Auto First Message",
-    "afmText": "Set the auto message that you'd like to automatically send when first matching.\n\nType  <1>%name%</1>  to insert their name. 255 max char length",
+    "afmText": "Set the auto message that you’d like to automatically send to all your new matches from message tab.\n\nType  <1>%name%</1>  to insert their name. 255 max char length",
     "free": "Free",
     "premium": "Premium",
     "scan": "Please keep in mind that Autoswipes will only send auto messages while auto swiping. It will not send messages to people who you've already matched with.",
@@ -33,14 +33,16 @@
     "share": "Share this code with a friend and it will save up to 500 rubles.",
     "available": "Available\n<br />\nfor Premium!",
     "availableButton": "Buy PREMIUM",
-    "changePassword": "Change Password"
+    "changePassword": "Change Password",
+    "successAFM": "Message changed successfully"
   },
   "settings": {
     "changePassword": "Change Password",
     "enterCurrentPassword": "Enter old password",
     "enterNewPassword": "Enter a new password",
     "confirmNewPassword": "Repeat new password",
-    "change": "Edit"
+    "change": "Save",
+    "successChangePassword": "Password changed successfully"
   },
   "auth": {
     "login": "Login",
@@ -72,17 +74,17 @@
     "month": "month",
     "year": "year",
     "autoMessaging": "Auto Messaging",
-    "swipePerMonth": "150 000 swipe per month",
+    "swipePerMonth": "150 000 swipes per month",
     "params": "Adjust the swiping options",
     "match": "1 000+ matches per month",
-    "swipePerMonth2": "30 000 swipe per month",
-    "sec": "1 swipe in 3 seconds",
+    "swipePerMonth2": "30 000 swipes per month",
+    "sec": "1 swipes in 3 seconds",
     "autoMessaging2": "No auto messaging",
     "buy": "Buy",
-    "price1": "999 rub / month",
-    "price2": "10 000 rub / year",
-    "price3": "499 rub / month",
-    "price4": "5 000 rub / year"
+    "price1": "599 rub / month",
+    "price2": "5 899 rub / year",
+    "price3": "199 rub / month",
+    "price4": "1 899 rub / year"
   },
   "validation": {
     "EMAIL_ALREADY_EXIST": "E-mail is already in use",
@@ -93,6 +95,8 @@
     "PASSWORD_MUST_CONTAIN_AT_LEAST_8_CHARACTERS": "Password must contain a least 8 characters",
     "PHONE_NUMBER_INVALID": "Phone number invalid",
     "PASSWORD_CONFIRM_IS_DIFFERENT": "Password confirm is different",
-    "LOGIN_ERROR": "Invalid email or password"
+    "LOGIN_ERROR": "Invalid email or password",
+    "PASSWORD_INCORRECT": "Incorrect password",
+    "MESSAGE_MAX_LENGTH_255": "255 max char length"
   }
 }

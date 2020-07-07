@@ -4,11 +4,14 @@ import Input from '../Input';
 import { useSelector } from "react-redux";
 import { changePassword } from '../../helpers/api';
 import Alert from 'react-s-alert';
+import {Link, Redirect} from "react-router-dom";
 
 function LegacySettings() {
     const [currentPassword, setCurrentPassword] = useState('');
-    const [newPassword, setNewPassword] = useState('');
-    const [newPasswordConfirm, setNewPasswordConfirm] = useState('');
+    const [password, setPassword] = useState('');
+    const [passwordConfirm, setPasswordConfirm] = useState('');
+    const [errors, setErrors] = useState({});
+    const [red, setRed] = useState(false);
 
     const user = useSelector(state => state.user);
     const { t } = useTranslation();
@@ -17,16 +20,34 @@ function LegacySettings() {
         e.preventDefault();
 
         const passwordRequest = {
-            currentPassword, newPassword, newPasswordConfirm,
+            currentPassword, password, passwordConfirm,
             email: user.email
         };
 
         changePassword(passwordRequest)
             .then(response => {
-                console.log(response);
+
+                if (!response.success){
+                    setErrors(response);
+
+                    Alert.error(t('auth.validationFetch'));
+                    return false;
+                }
+
+                setErrors({});
+                setRed(true);
+
+                Alert.success(t('settings.successChangePassword'));
+
             }).catch(() => {
                 Alert.error(t('validation.LOGIN_ERROR'));
             });
+    }
+
+    if (red) {
+        return (
+            <Redirect to='/'/>
+        );
     }
 
     return (
@@ -42,25 +63,33 @@ function LegacySettings() {
                             name={"currentPassword"}
                             value={currentPassword}
                             placeholder={t('settings.enterCurrentPassword')}
+                            errors={errors.currentPasswordErrors || []}
                             handleChange={e => setCurrentPassword(e.target.value)}
                         />
                         <Input
                             inputType="password"
                             title={t('settings.enterNewPassword')}
-                            name={"newPassword"}
-                            value={newPassword}
+                            name={"password"}
+                            value={password}
                             placeholder={t('settings.enterNewPassword')}
-                            handleChange={e => setNewPassword(e.target.value)}
+                            errors={errors.passwordErrors || []}
+                            handleChange={e => setPassword(e.target.value)}
                         />
                         <Input
                             inputType="password"
                             title={t('settings.confirmNewPassword')}
-                            name={"newPasswordConfirm"}
-                            value={newPasswordConfirm}
+                            name={"passwordConfirm"}
+                            value={passwordConfirm}
                             placeholder={t('settings.confirmNewPassword')}
-                            handleChange={e => setNewPasswordConfirm(e.target.value)}
+                            errors={errors.passwordConfirmErrors || []}
+                            handleChange={e => setPasswordConfirm(e.target.value)}
                         />
-                        <button className="auth__button">{t('settings.change')}</button>
+                        <div className="cabinet-bottom">
+                            <button className="cabinet-bottom__button">{t('settings.change')}</button>
+                            <Link to="/" className="cabinet-bottom__button cabinet-bottom__button--quit">
+                                {t('toMain')}
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </form>

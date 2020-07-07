@@ -317,6 +317,7 @@
     text-transform: uppercase;
     text-decoration: none;
     color: #ffffff;
+    font-size: 14px;
     font-weight: 600;
     border: 1px solid #ec446f;
     transition: color .3s, background-color .3s;
@@ -329,6 +330,8 @@
     &--quit {
       background-color: #fff;
       color: #ec446f;
+      border-color: transparent;
+      font-size: 13px;
 
       &:hover {
         color: #ffffff;

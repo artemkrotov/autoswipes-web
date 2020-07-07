@@ -19,7 +19,7 @@ function LegacyCabinetKey() {
             <div className="cabinet-subtext">
                 {t('cabinet.pastKey')} ({t('cabinet.onlyChrome')})
             </div>
-            <a href="/" className="cabinet-input-group__buy">
+            <a href="https://chrome.google.com/webstore/detail/autoswipes/kppmnkmdgibiobnlleelkjhbnekedonm" className="cabinet-input-group__buy">
                 {t('cabinet.downloadExt')}
             </a>
         </React.Fragment>

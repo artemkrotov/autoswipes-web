@@ -36,18 +36,37 @@ const NonPremium = () => {
 function LegacyAutoFirstMessage() {
     const { t } = useTranslation();
     const user = useSelector(state => state.user);
+    const [errors, setErrors] = useState({});
 
     const [message, setMessage] = useState(user.message);
 
     const handleSubmit = e => {
         e.preventDefault();
 
-        updateMsg({messageId: message}).then(res => {
-            console.log(res);
+        updateMsg({ message }).then(response => {
+            if (!response.success){
+                setErrors(response.messageErrors);
+
+                Alert.error(t('auth.validationFetch'));
+                return false;
+            }
+
+            setErrors({});
+
+            Alert.success(t('cabinet.successAFM'));
         }).catch(()=>{
             Alert.error('Error CORS back-end');
         });
     };
+
+    const renderErrors = () => {
+        if (errors && errors.length){
+
+            return errors.map(( err, id ) => <div className="form-group__error" key={id}>{t('validation.'+err)}</div>);
+        } else {
+            return '';
+        }
+    }
 
     return (
         <React.Fragment>
@@ -59,9 +78,9 @@ function LegacyAutoFirstMessage() {
                     Type  <b>%name%</b>  to insert their name. 255 max char length
                 </Trans>
             </p>
-            <div className="cabinet-subtext">
-                {t('cabinet.scan')}
-            </div>
+            {/*<div className="cabinet-subtext">*/}
+            {/*    {t('cabinet.scan')}*/}
+            {/*</div>*/}
             <textarea
                 name="afm"
                 id="afm"
@@ -69,6 +88,7 @@ function LegacyAutoFirstMessage() {
                 className="afm"
                 value={message} >
             </textarea>
+            {renderErrors()}
             <a href="/" onClick={handleSubmit} className="cabinet-input-group__buy">
                 {t('cabinet.save')}
             </a>

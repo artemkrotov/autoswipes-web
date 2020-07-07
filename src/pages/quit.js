@@ -8,7 +8,6 @@ export default () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        console.log('asd');
         dispatch({
             type: 'PAST_USER',
             payload: {
