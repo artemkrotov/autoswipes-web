@@ -17,12 +17,11 @@ function LegacyCabinetKey() {
                 value={user.key}
                 onClick={event => event.target.select()} />
             <div className="cabinet-subtext">
-                {t('cabinet.pastKey')}&nbsp;
-                <a href="/" className="cabinet-subtext__link">
-                    {t('cabinet.downloadExt')}
-                </a>
-                &nbsp;({t('cabinet.onlyChrome')})
+                {t('cabinet.pastKey')} ({t('cabinet.onlyChrome')})
             </div>
+            <a href="/" className="cabinet-input-group__buy">
+                {t('cabinet.downloadExt')}
+            </a>
         </React.Fragment>
     );
 };
