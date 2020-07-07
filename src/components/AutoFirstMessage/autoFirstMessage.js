@@ -11,7 +11,7 @@ const NonPremium = () => {
 
     const user = useSelector(state => state.user);
 
-    if (user.license.type === 'STANDART') {
+    if (user.license.type !== 'PREMIUM') {
         return (
             <div className="non-premium">
                 <div className="non-premium__inner">
