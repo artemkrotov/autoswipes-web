@@ -73,9 +73,9 @@ function LegacyAutoFirstMessage() {
             <NonPremium />
             <p className="cabinet-text">
                 <Trans i18nKey="cabinet.afmText">
-                    Set the auto message that you'd like to automatically send when first matching.
+                    Напиши здесь универсальную “фразу-открывашку”, которую ты можешь автоматически рассылать в нашем расширении.
 
-                    Type  <b>%name%</b>  to insert their name. 255 max char length
+                    <b>%name%</b>  мы автоматически заменим на имя твоей пары
                 </Trans>
             </p>
             {/*<div className="cabinet-subtext">*/}

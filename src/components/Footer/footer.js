@@ -12,9 +12,9 @@ function LegacyFooter() {
     return (
         <footer className="footer">
             <div className="footer__inner container">
-                <div className="footer__logotype">
+                <a href="https://autoswipes.com/" className="footer__logotype">
                     <img src={logotype} alt="Logotype autoswipes"/>
-                </div>
+                </a>
                 <ul className="footer-nav">
                     <li className="footer-nav__item">
                         <a href="https://autoswipes.com/how" className="footer-nav__link">

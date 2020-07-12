@@ -24,7 +24,7 @@
     "renew": "Renew license",
     "licenseTo": "Valid until",
     "autoFirstMessage": "Auto First Message",
-    "afmText": "Set the auto message that you’d like to automatically send to all your new matches from message tab.\n\nType  <1>%name%</1>  to insert their name. 255 max char length",
+    "afmText": "rite here a warm message template which you will be able to automatically send to all your matches in our extension.\n\nWe will replace  <1>%name%</1>  with name of your match for you.",
     "free": "Free",
     "premium": "Premium",
     "scan": "Please keep in mind that Autoswipes will only send auto messages while auto swiping. It will not send messages to people who you've already matched with.",

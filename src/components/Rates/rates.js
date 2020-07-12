@@ -69,7 +69,7 @@ function LegacyRates () {
                 </div>
             </div>
 
-            <div className="rates-questions">
+            <div className="rates-questions" style={{"display": "none"}}>
                 <div className="rates-questions__item">
                     <div className="rates-questions__header">Lorem ipsum dolor sit amet, consectetur adipisicing elit? </div>
                     <div className="rates-questions__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in</div>
