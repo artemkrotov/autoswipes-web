@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, {Suspense, useState} from 'react';
 import { useTranslation } from 'react-i18next';
 import './rates.scss';
 import logoPrem from './logo-prem.png';
@@ -6,9 +6,20 @@ import logoStand from './logo-stand.png';
 
 function LegacyRates () {
     const { t } = useTranslation();
+    const [promoCode, setPromoCode] = useState('');
 
     return (
         <div className="rates">
+            <form className="rates-promocode">
+                <input
+                    type="text"
+                    className="rates-promocode__input"
+                    placeholder="Введите промокод"
+                    onChange={ e => setPromoCode(e.target.value) }
+                    value={promoCode}/>
+                <button className="rates-promocode__button">Активировать!</button>
+            </form>
+
             <h2 className="rates__header rates__header--premium">Premium</h2>
             <div className="rates__container">
                 <div className="rates__item">
