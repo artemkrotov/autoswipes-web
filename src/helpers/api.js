@@ -1,4 +1,4 @@
-import { API_BASE_URL, AUTH_BASE_URL, ACCESS_TOKEN } from '../constants';
+import { API_BASE_URL, ACCESS_TOKEN } from '../constants';
 
 const request = (options) => {
     const headers = new Headers({
@@ -29,14 +29,14 @@ export function getUser() {
     }
 
     return request({
-        url: API_BASE_URL + "/api/customer/current",
+        url: API_BASE_URL + "/license-service/api/customer/current",
         method: 'GET'
     });
 }
 
 export function changePassword(passwordRequest) {
     return request({
-        url: AUTH_BASE_URL + "/auth/updatePasword",
+        url: API_BASE_URL + "/auth-service/auth/updatePasword",
         method: 'POST',
         body: JSON.stringify(passwordRequest)
     });
@@ -44,7 +44,7 @@ export function changePassword(passwordRequest) {
 
 export function login(loginRequest) {
     return request({
-        url: AUTH_BASE_URL + "/auth/login",
+        url: API_BASE_URL + "/auth-service/auth/login",
         method: 'POST',
         body: JSON.stringify(loginRequest)
     });
@@ -52,7 +52,7 @@ export function login(loginRequest) {
 
 export function signup(signupRequest) {
     return request({
-        url: AUTH_BASE_URL + "/auth/signup",
+        url: API_BASE_URL + "/auth-service/auth/signup",
         method: 'POST',
         body: JSON.stringify(signupRequest)
     });
@@ -60,7 +60,7 @@ export function signup(signupRequest) {
 
 export function updateMsg(messageRequest) {
     return request({
-        url: API_BASE_URL + "/api/customer/message",
+        url: API_BASE_URL + "/license-service/api/customer/message",
         method: 'PUT',
         body: JSON.stringify(messageRequest)
     });
