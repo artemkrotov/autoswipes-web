@@ -24,7 +24,6 @@ function LegacyCabinetAccount() {
     }
 
     const inp = () => {
-        console.log(user.license.type);
         if(user.license.type === 'STANDART') {
             return (
                 <React.Fragment>

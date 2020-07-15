@@ -4,9 +4,14 @@ import Input from '../Input';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { login, getUser } from '../../helpers/api';
-import { ACCESS_TOKEN } from '../../constants';
 import AuthSocials from '../AuthSocials';
 import Alert from 'react-s-alert';
+import { ACCESS_TOKEN,
+    IS_BUYING,
+    PURCHASE_LINK,
+    PROMO_CODE,
+    BUY_LICENSE,
+    BUY_DATE } from '../../constants';
 
 function LegacyLogin() {
     const [email, setEmail] = useState('');
@@ -23,6 +28,35 @@ function LegacyLogin() {
         login(loginRequest)
             .then(async response => {
                 await localStorage.setItem(ACCESS_TOKEN, response.accessToken);
+
+                if(localStorage.getItem(IS_BUYING)) {
+                    let args = '?country=RUS';
+
+                    if (localStorage.getItem(PROMO_CODE)) {
+                        args += '&promoCode=' + localStorage.getItem(PROMO_CODE)
+                    }
+
+                    if (localStorage.getItem(BUY_LICENSE)) {
+                        args += '&licenseType=' + localStorage.getItem(BUY_LICENSE)
+                    } else {
+                        args += '&licenseType=PREMIUM'
+                    }
+
+                    if (localStorage.getItem(BUY_DATE)) {
+                        args += '&period=' + localStorage.getItem(BUY_DATE)
+                    } else {
+                        args += '&period=M'
+                    }
+
+                    if (localStorage.getItem(ACCESS_TOKEN)) {
+                        args += '&token=' + localStorage.getItem(ACCESS_TOKEN)
+                    }
+                    localStorage.removeItem(IS_BUYING);
+                    localStorage.removeItem(BUY_LICENSE);
+                    localStorage.removeItem(BUY_DATE);
+                    window.location.href = PURCHASE_LINK + args;
+                    return true;
+                }
 
                 getUser().then(response => {
                     dispatch({

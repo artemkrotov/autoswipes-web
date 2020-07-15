@@ -6,7 +6,12 @@ import logoStand from './logo-stand.png';
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import Alert from "react-s-alert";
-import { ACCESS_TOKEN, PURCHASE_LINK } from '../../constants';
+import { ACCESS_TOKEN,
+    PURCHASE_LINK,
+    IS_BUYING,
+    TIME_BUYING,
+    BUY_LICENSE,
+    BUY_DATE } from '../../constants';
 
 const Price = ({ priceRender, date, discount }) => {
     const { t } = useTranslation();
@@ -61,6 +66,10 @@ function LegacyRates () {
         }
 
         if (!user.isSignedIn){
+            localStorage.setItem(IS_BUYING, 1);
+            localStorage.setItem(TIME_BUYING, new Date());
+            localStorage.setItem(BUY_LICENSE, license);
+            localStorage.setItem(BUY_DATE, date);
             setRed(true);
             Alert.error(t('rates.needAuth'));
         } else {
