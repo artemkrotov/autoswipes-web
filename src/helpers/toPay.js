@@ -1,0 +1,47 @@
+import {
+    ACCESS_TOKEN,
+    BUY_DATE,
+    BUY_LICENSE,
+    IS_BUYING,
+    PROMO_CODE,
+    PURCHASE_LINK
+} from "../constants";
+
+export default () => {
+    if(localStorage.getItem(IS_BUYING)) {
+        let args = '?country=RUS';
+
+        if (localStorage.getItem(PROMO_CODE)) {
+            args += '&promoCode=' + localStorage.getItem(PROMO_CODE)
+        } else {
+            args += '&promoCode=null'
+        }
+
+        if (localStorage.getItem(BUY_LICENSE)) {
+            args += '&licenseType=' + localStorage.getItem(BUY_LICENSE)
+        } else {
+            args += '&licenseType=PREMIUM'
+        }
+
+        if (localStorage.getItem(BUY_DATE)) {
+            args += '&period=' + localStorage.getItem(BUY_DATE)
+        } else {
+            args += '&period=M'
+        }
+
+        if (localStorage.getItem(ACCESS_TOKEN)) {
+            args += '&token=' + localStorage.getItem(ACCESS_TOKEN)
+        } else {
+            args += '&token=null'
+        }
+
+        localStorage.removeItem(IS_BUYING);
+        localStorage.removeItem(BUY_LICENSE);
+        localStorage.removeItem(BUY_DATE);
+        
+        window.location.href = PURCHASE_LINK + args;
+        return true;
+    } else {
+        return false;
+    }
+}

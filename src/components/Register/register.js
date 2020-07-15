@@ -6,12 +6,8 @@ import AuthSocials from '../AuthSocials';
 import {getUser, signup} from "../../helpers/api";
 import { useDispatch } from "react-redux";
 import Alert from 'react-s-alert';
-import { ACCESS_TOKEN,
-    BUY_DATE,
-    BUY_LICENSE,
-    IS_BUYING,
-    PROMO_CODE,
-    PURCHASE_LINK } from "../../constants";
+import toPay from '../../helpers/toPay';
+import { ACCESS_TOKEN } from "../../constants";
 
 function LegacyRegister() {
     const { t } = useTranslation();
@@ -41,34 +37,7 @@ function LegacyRegister() {
 
                 setErrors({});
 
-                if(localStorage.getItem(IS_BUYING)) {
-                    let args = '?country=RUS';
-
-                    if (localStorage.getItem(PROMO_CODE)) {
-                        args += '&promoCode=' + localStorage.getItem(PROMO_CODE)
-                    }
-
-                    if (localStorage.getItem(BUY_LICENSE)) {
-                        args += '&licenseType=' + localStorage.getItem(BUY_LICENSE)
-                    } else {
-                        args += '&licenseType=PREMIUM'
-                    }
-
-                    if (localStorage.getItem(BUY_DATE)) {
-                        args += '&period=' + localStorage.getItem(BUY_DATE)
-                    } else {
-                        args += '&period=M'
-                    }
-
-                    if (localStorage.getItem(ACCESS_TOKEN)) {
-                        args += '&token=' + localStorage.getItem(ACCESS_TOKEN)
-                    }
-                    localStorage.removeItem(IS_BUYING);
-                    localStorage.removeItem(BUY_LICENSE);
-                    localStorage.removeItem(BUY_DATE);
-                    window.location.href = PURCHASE_LINK + args;
-                    return true;
-                }
+                toPay();
 
                 getUser().then(response => {
                     dispatch({
