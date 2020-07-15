@@ -4,10 +4,21 @@ import {
     BUY_LICENSE,
     IS_BUYING,
     PROMO_CODE,
-    PURCHASE_LINK
+    PURCHASE_LINK,
+    TIME_BUYING
 } from "../constants";
+import dayjs from "dayjs";
 
 export default () => {
+    if(dayjs(new Date()).unix() - localStorage.getItem(TIME_BUYING) > 1800 ) {
+        localStorage.removeItem(IS_BUYING);
+        localStorage.removeItem(BUY_LICENSE);
+        localStorage.removeItem(BUY_DATE);
+        localStorage.removeItem(TIME_BUYING);
+
+        return true;
+    }
+
     if(localStorage.getItem(IS_BUYING)) {
         let args = '?country=RUS';
 
@@ -38,7 +49,8 @@ export default () => {
         localStorage.removeItem(IS_BUYING);
         localStorage.removeItem(BUY_LICENSE);
         localStorage.removeItem(BUY_DATE);
-        
+        localStorage.removeItem(TIME_BUYING);
+
         window.location.href = PURCHASE_LINK + args;
         return true;
     } else {

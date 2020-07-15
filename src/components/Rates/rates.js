@@ -6,6 +6,7 @@ import logoStand from './logo-stand.png';
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import Alert from "react-s-alert";
+import dayjs from 'dayjs';
 import { ACCESS_TOKEN,
     PURCHASE_LINK,
     IS_BUYING,
@@ -67,7 +68,7 @@ function LegacyRates () {
 
         if (!user.isSignedIn){
             localStorage.setItem(IS_BUYING, 1);
-            localStorage.setItem(TIME_BUYING, new Date());
+            localStorage.setItem(TIME_BUYING, dayjs(new Date()).unix());
             localStorage.setItem(BUY_LICENSE, license);
             localStorage.setItem(BUY_DATE, date);
             setRed(true);
