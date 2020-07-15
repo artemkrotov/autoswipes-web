@@ -33,7 +33,7 @@ function LegacyCabinetAccount() {
                         id="typeAccount"
                         className="cabinet-input-group__input-fill"
                         onChange={()=>{}}
-                        value={t('cabinet.free')} />
+                        value={t('cabinet.standart')} />
                     <Link to="/rates" className="cabinet-input-group__buy">
                         {t('cabinet.buy')}
                     </Link>
@@ -64,7 +64,7 @@ function LegacyCabinetAccount() {
                         id="typeAccount"
                         className="cabinet-input-group__input-fill"
                         onChange={()=>{}}
-                        value={'Trial'} />
+                        value={t('cabinet.trial')} />
                     <Link to="/rates" className="cabinet-input-group__buy">
                         {t('cabinet.buy')}
                     </Link>

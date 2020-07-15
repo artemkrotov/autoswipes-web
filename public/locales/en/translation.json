@@ -25,8 +25,9 @@
     "licenseTo": "Valid until",
     "autoFirstMessage": "Auto First Message",
     "afmText": "rite here a warm message template which you will be able to automatically send to all your matches in our extension.\n\nWe will replace  <1>%name%</1>  with name of your match for you.",
-    "free": "Free",
+    "standart": "Standart",
     "premium": "Premium",
+    "trial": "Trial",
     "scan": "Please keep in mind that Autoswipes will only send auto messages while auto swiping. It will not send messages to people who you've already matched with.",
     "save": "Save",
     "myPromoCode": "My promocode",
@@ -81,10 +82,9 @@
     "sec": "1 swipes in 3 seconds",
     "autoMessaging2": "No auto messaging",
     "buy": "Buy",
-    "price1": "599 rub / month",
-    "price2": "5 899 rub / year",
-    "price3": "199 rub / month",
-    "price4": "1 899 rub / year"
+    "currencyM": "rub / month",
+    "currencyY": "rub / year",
+    "needAuth": "Log in first!"
   },
   "validation": {
     "EMAIL_ALREADY_EXIST": "E-mail is already in use",

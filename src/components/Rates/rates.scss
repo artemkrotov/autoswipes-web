@@ -136,6 +136,30 @@
 
   &__subtext {
     color: #b94260;
+
+    &--cross {
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        color: red;
+        width: 100%;
+        height: 0;
+        border-bottom: 1px solid red;
+        transform: rotate(-1deg);
+      }
+    }
+  }
+
+  &__discount {
+    color: #b94260;
+    font-weight: 600;
+    font-size: 16px;
   }
 }
 
