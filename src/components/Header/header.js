@@ -132,14 +132,14 @@ function LegacyHeader() {
 
                         <div className="header__change-language">
                             <button
-                                className={"header__change-language-link" + currentLng('en')}
-                                onClick={() => changeLanguage('en')} >
+                                className={"header__change-language-link" + currentLng('en-US')}
+                                onClick={() => changeLanguage('en-US')} >
                                 Eng
                             </button>
                             <span className="header__change-language-line">|</span>
                             <button
-                                className={"header__change-language-link" + currentLng('ru')}
-                                onClick={() => changeLanguage('ru')} >
+                                className={"header__change-language-link" + currentLng('ru-RU')}
+                                onClick={() => changeLanguage('ru-RU')} >
                                 Rus
                             </button>
                         </div>
