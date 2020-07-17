@@ -89,16 +89,6 @@ function LegacyRates () {
 
     return (
         <div className="rates">
-            <form className="rates-promocode">
-                <input
-                    type="text"
-                    className="rates-promocode__input"
-                    placeholder="Введите промокод"
-                    onChange={ e => setPromoCode(e.target.value) }
-                    value={promoCode}/>
-                <button className="rates-promocode__button">Активировать!</button>
-            </form>
-
             <h2 className="rates__header rates__header--premium">Premium</h2>
             <div className="rates__container">
                 <div className="rates__item">
@@ -158,6 +148,16 @@ function LegacyRates () {
                     </div>
                 </div>
             </div>
+
+            <form className="rates-promocode">
+                <input
+                    type="text"
+                    className="rates-promocode__input"
+                    placeholder="Введите промокод"
+                    onChange={ e => setPromoCode(e.target.value) }
+                    value={promoCode}/>
+                <button className="rates-promocode__button">Активировать!</button>
+            </form>
         </div>
     );
 };
