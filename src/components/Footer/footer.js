@@ -44,17 +44,17 @@ function LegacyFooter() {
                 </ul>
                 <ul className="footer-social">
                     <li className="footer-social__item">
-                        <a href="https://www.facebook.com/Autoswipes-108168317640109" target="_blank" className="footer-social__link">
+                        <a href="https://www.facebook.com/Autoswipes-108168317640109" target="_blank"rel="noopener noreferrer" className="footer-social__link">
                             <Facebook className="footer-social__icon" />
                         </a>
                     </li>
                     <li className="footer-social__item">
-                        <a href="https://www.instagram.com/autoswipes" target="_blank" className="footer-social__link">
+                        <a href="https://www.instagram.com/autoswipes" target="_blank"rel="noopener noreferrer" className="footer-social__link">
                             <Instagram className="footer-social__icon" />
                         </a>
                     </li>
                     <li className="footer-social__item">
-                        <a href="https://vk.com/autoswipes" target="_blank" className="footer-social__link">
+                        <a href="https://vk.com/autoswipes" target="_blank"rel="noopener noreferrer" className="footer-social__link">
                             <Vk className="footer-social__icon" />
                         </a>
                     </li>

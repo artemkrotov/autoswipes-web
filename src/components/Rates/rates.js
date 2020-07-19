@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from 'react';
+import React, {Suspense, useEffect, useState} from 'react';
 import { useTranslation } from 'react-i18next';
 import './rates.scss';
 import logoPrem from './logo-prem.png';
@@ -7,8 +7,10 @@ import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import Alert from "react-s-alert";
 import dayjs from 'dayjs';
+import { checkPromocode } from '../../helpers/api';
 import { ACCESS_TOKEN,
     PURCHASE_LINK,
+    PROMO_CODE,
     IS_BUYING,
     TIME_BUYING,
     BUY_LICENSE,
@@ -42,13 +44,33 @@ function LegacyRates () {
     const [discount, setDiscount] = useState( 0 );
     const user = useSelector(state => state.user);
 
+    useEffect(() => {
+        if(localStorage.getItem(PROMO_CODE) && discount === 0){
+
+            checkPromocode(localStorage.getItem(PROMO_CODE)).then(result => {
+                if (result.status === 'ACTIVE') {
+                    setPromoCode(localStorage.getItem(PROMO_CODE));
+                    setDiscount(result.value);
+                } else {
+                    localStorage.removeItem(PROMO_CODE);
+                }
+            });
+
+        }
+    }, [discount, t]);
+
     const buy = ( e, license, date ) => {
         e.preventDefault();
 
         let args = '?';
 
         args += 'country=RUS';
-        args += '&promoCode=awe';
+
+        if (localStorage.getItem(PROMO_CODE)) {
+            args += '&promoCode=' + localStorage.getItem(PROMO_CODE)
+        } else {
+            args += '&promoCode=null';
+        }
 
         if (license) {
             args += '&licenseType=' + license
@@ -79,8 +101,29 @@ function LegacyRates () {
     }
 
     // eslint-disable-next-line
-    const checkDiscount = () => {
-        setDiscount(15);
+    const checkDiscount = e => {
+        e.preventDefault();
+        checkPromocode(promoCode).then(result => {
+            switch (result.status) {
+                case 'ACTIVE':
+                    Alert.success(t('rates.active'));
+                    setDiscount(result.value);
+                    console.log('asdasda', PROMO_CODE);
+                    localStorage.setItem(PROMO_CODE, promoCode);
+                    break;
+
+                case 'EXPIRED':
+                    Alert.error(t('rates.expired'));
+                    setDiscount(0);
+                    if(localStorage.getItem(PROMO_CODE)) localStorage.removeItem(PROMO_CODE)
+                    break;
+
+                default:
+                    Alert.error(t('rates.notFound'));
+                    setDiscount(0);
+                    if(localStorage.getItem(PROMO_CODE)) localStorage.removeItem(PROMO_CODE)
+            }
+        });
     }
 
     if (red) {
@@ -149,7 +192,7 @@ function LegacyRates () {
                 </div>
             </div>
 
-            <form className="rates-promocode">
+            <form className="rates-promocode" onSubmit={checkDiscount}>
                 <input
                     type="text"
                     className="rates-promocode__input"

@@ -65,3 +65,10 @@ export function updateMsg(messageRequest) {
         body: JSON.stringify(messageRequest)
     });
 }
+
+export function checkPromocode(promocode) {
+    return request({
+        url: API_BASE_URL + "/promocode-service/check?promocode=" + promocode,
+        method: 'GET'
+    });
+}

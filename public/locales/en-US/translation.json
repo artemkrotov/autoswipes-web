@@ -35,7 +35,10 @@
     "available": "Available\n<br />\nfor Premium!",
     "availableButton": "Buy PREMIUM",
     "changePassword": "Change Password",
-    "successAFM": "Message changed successfully"
+    "successAFM": "Message changed successfully",
+    "active": "The promo code has been successfully applied.",
+    "expired": "The promo code has expired.",
+    "notFound": "No promo code found."
   },
   "settings": {
     "changePassword": "Change Password",
