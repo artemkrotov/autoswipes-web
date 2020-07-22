@@ -1,4 +1,4 @@
-import React, {Suspense, useEffect, useState} from 'react';
+import React, {Suspense, useState} from 'react';
 import { useTranslation } from 'react-i18next';
 import './rates.scss';
 import logoPrem from './logo-prem.png';
@@ -43,21 +43,6 @@ function LegacyRates () {
     const [red, setRed] = useState(false);
     const [discount, setDiscount] = useState( 0 );
     const user = useSelector(state => state.user);
-
-    useEffect(() => {
-        if(localStorage.getItem(PROMO_CODE) && discount === 0){
-
-            checkPromocode(localStorage.getItem(PROMO_CODE)).then(result => {
-                if (result.status === 'ACTIVE') {
-                    setPromoCode(localStorage.getItem(PROMO_CODE));
-                    setDiscount(result.value);
-                } else {
-                    localStorage.removeItem(PROMO_CODE);
-                }
-            });
-
-        }
-    }, [discount, t]);
 
     const buy = ( e, license, date ) => {
         e.preventDefault();
