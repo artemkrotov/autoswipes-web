@@ -128,7 +128,7 @@ function LegacyRates () {
                         <div className="rates__text">{t('rates.swipePerMonth')}</div>
                         <div className="rates__text">{t('rates.params')}</div>
                         <div className="rates__text">{t('rates.match')}</div>
-                        <a href="/" onClick={ e => buy(e, 'PREMIUM', 'M') } className="rates__button">{t('rates.buy')}</a>
+                        <a href="/" onClick={ e => buy(e, 'PREMIUM', 'M');ym(65791732,'reachGoal','target') } className="rates__button">{t('rates.buy')}</a>
                         <Price priceRender={499} date={'M'} discount={discount} />
                     </div>
                 </div>
@@ -142,7 +142,7 @@ function LegacyRates () {
                         <div className="rates__text">{t('rates.swipePerMonth')}</div>
                         <div className="rates__text">{t('rates.params')}</div>
                         <div className="rates__text">{t('rates.match')}</div>
-                        <a href="/" onClick={ e => buy(e, 'PREMIUM', 'Y') } className="rates__button">{t('rates.buy')}</a>
+                        <a href="/" onClick={ e => buy(e, 'PREMIUM', 'Y');ym(65791732,'reachGoal','target') } className="rates__button">{t('rates.buy')}</a>
                         <Price priceRender={1999} date={'Y'} discount={discount} />
                     </div>
                 </div>
@@ -158,7 +158,7 @@ function LegacyRates () {
                         <div className="rates__text">{t('rates.swipePerMonth2')}</div>
                         <div className="rates__text">{t('rates.sec')}</div>
                         <div className="rates__text">{t('rates.autoMessaging2')}</div>
-                        <a href="/" onClick={ e => buy(e, 'STANDART', 'M') } className="rates__button">{t('rates.buy')}</a>
+                        <a href="/" onClick={ e => buy(e, 'STANDART', 'M');ym(65791732,'reachGoal','target') } className="rates__button">{t('rates.buy')}</a>
                         <Price priceRender={299} date={'M'} discount={discount} />
                     </div>
                 </div>
@@ -171,7 +171,7 @@ function LegacyRates () {
                         <div className="rates__text">{t('rates.swipePerMonth2')}</div>
                         <div className="rates__text">{t('rates.sec')}</div>
                         <div className="rates__text">{t('rates.autoMessaging2')}</div>
-                        <a href="/" onClick={ e => buy(e, 'STANDART', 'Y') } className="rates__button">{t('rates.buy')}</a>
+                        <a href="/" onClick={ e => buy(e, 'STANDART', 'Y');ym(65791732,'reachGoal','target') } className="rates__button">{t('rates.buy')}</a>
                         <Price priceRender={1199} date={'Y'} discount={discount} />
                     </div>
                 </div>
