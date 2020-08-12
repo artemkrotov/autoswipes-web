@@ -70,8 +70,8 @@
     "forgotSend": "Отправить"
   },
   "rates": {
-    "saving1": "Экономия (~4 000 руб)",
-    "saving2": "Экономия (~2 400 руб)",
+    "saving1": "Экономия (~58 usd)",
+    "saving2": "Экономия (~29 usd)",
     "month": "мес",
     "year": "год",
     "autoMessaging": "Автосообщения",
@@ -87,7 +87,12 @@
     "needAuth": "Сперва авторизуйтесь!",
     "active": "Промокод успешно применен.",
     "expired": "Действие промокода истекло.",
-    "notFound": "Промокод не найден."
+    "notFound": "Промокод не найден.",
+    "country" : "RUS",
+    "priceSM" : "299",
+    "priceSY" : "1599",
+    "pricePM" : "599",
+    "pricePY" : "3199"
   },
   "validation": {
     "EMAIL_ALREADY_EXIST": "E-mail уже используется",
