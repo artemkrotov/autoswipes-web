@@ -10,6 +10,9 @@ import {
 import dayjs from "dayjs";
 
 export default () => {
+    // eslint-disable-next-line no-undef
+    ym(65791732,'reachGoal','target');
+
     if(dayjs(new Date()).unix() - localStorage.getItem(TIME_BUYING) > 1800 ) {
         localStorage.removeItem(IS_BUYING);
         localStorage.removeItem(BUY_LICENSE);

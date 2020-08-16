@@ -1,4 +1,4 @@
-import React, {Suspense, useState} from 'react';
+import React, {Suspense, useEffect, useState} from 'react';
 import { useTranslation } from 'react-i18next';
 import './rates.scss';
 import logoPrem from './logo-prem.png';
@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import Alert from "react-s-alert";
 import dayjs from 'dayjs';
-import { checkPromocode } from '../../helpers/api';
+import { checkPromocode, getPrice } from '../../helpers/api';
 import { ACCESS_TOKEN,
     PURCHASE_LINK,
     PROMO_CODE,
@@ -42,10 +42,26 @@ function LegacyRates () {
     const [promoCode, setPromoCode] = useState('');
     const [red, setRed] = useState(false);
     const [discount, setDiscount] = useState( 0 );
+    const [pricePremM, setPricePremM] = useState( 599 );
+    const [pricePremY, setPricePremY] = useState( 5899 );
+    const [priceStandM, setPriceStandM] = useState( 199 );
+    const [priceStandY, setPriceStandY] = useState( 1899 );
     const user = useSelector(state => state.user);
+
+    const getLanguage = window.localStorage.i18nextLng === 'en-US' ? 'ENG' : 'RUS';
+
+    useEffect(() => {
+        getPrice(getLanguage, 'PREMIUM', 'M').then(value => setPricePremM(value.value));
+        getPrice(getLanguage, 'PREMIUM', 'Y').then(value => setPricePremY(value.value));
+        getPrice(getLanguage, 'STANDART', 'M').then(value => setPriceStandM(value.value));
+        getPrice(getLanguage, 'STANDART', 'Y').then(value => setPriceStandY(value.value));
+    }, [getLanguage]);
 
     const buy = ( e, license, date ) => {
         e.preventDefault();
+
+        // eslint-disable-next-line no-undef
+        ym(65791732,'reachGoal','target');
 
         let args = '?';
 
@@ -129,7 +145,7 @@ function LegacyRates () {
                         <div className="rates__text">{t('rates.params')}</div>
                         <div className="rates__text">{t('rates.match')}</div>
                         <a href="/" onClick={ e => buy(e, 'PREMIUM', 'M') } className="rates__button">{t('rates.buy')}</a>
-                        <Price priceRender={599} date={'M'} discount={discount} />
+                        <Price priceRender={pricePremM} date={'M'} discount={discount} />
                     </div>
                 </div>
 
@@ -143,7 +159,7 @@ function LegacyRates () {
                         <div className="rates__text">{t('rates.params')}</div>
                         <div className="rates__text">{t('rates.match')}</div>
                         <a href="/" onClick={ e => buy(e, 'PREMIUM', 'Y') } className="rates__button">{t('rates.buy')}</a>
-                        <Price priceRender={5899} date={'Y'} discount={discount} />
+                        <Price priceRender={pricePremY} date={'Y'} discount={discount} />
                     </div>
                 </div>
             </div>
@@ -159,7 +175,7 @@ function LegacyRates () {
                         <div className="rates__text">{t('rates.sec')}</div>
                         <div className="rates__text">{t('rates.autoMessaging2')}</div>
                         <a href="/" onClick={ e => buy(e, 'STANDART', 'M') } className="rates__button">{t('rates.buy')}</a>
-                        <Price priceRender={199} date={'M'} discount={discount} />
+                        <Price priceRender={priceStandM} date={'M'} discount={discount} />
                     </div>
                 </div>
 
@@ -172,7 +188,7 @@ function LegacyRates () {
                         <div className="rates__text">{t('rates.sec')}</div>
                         <div className="rates__text">{t('rates.autoMessaging2')}</div>
                         <a href="/" onClick={ e => buy(e, 'STANDART', 'Y') } className="rates__button">{t('rates.buy')}</a>
-                        <Price priceRender={1899} date={'Y'} discount={discount} />
+                        <Price priceRender={priceStandY} date={'Y'} discount={discount} />
                     </div>
                 </div>
             </div>

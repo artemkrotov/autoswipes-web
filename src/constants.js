@@ -9,6 +9,8 @@ export const VK_AUTH_URL = '/';
 
 export const PURCHASE_LINK = API_BASE_URL + '/payments-service/yandexkassa/create';
 
+export const GET_PRICE_LINK = API_BASE_URL + '/payments-service/getPrice';
+
 // Local storage
 export const ACCESS_TOKEN = 'token';
 export const PROMO_CODE = 'promoCode';

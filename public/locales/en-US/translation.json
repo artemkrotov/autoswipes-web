@@ -85,8 +85,8 @@
     "sec": "1 swipes in 3 seconds",
     "autoMessaging2": "No auto messaging",
     "buy": "Buy",
-    "currencyM": "rub / month",
-    "currencyY": "rub / year",
+    "currencyM": "usd / month",
+    "currencyY": "usd / year",
     "needAuth": "Log in first!"
   },
   "validation": {

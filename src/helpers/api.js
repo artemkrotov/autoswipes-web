@@ -1,4 +1,4 @@
-import { API_BASE_URL, ACCESS_TOKEN } from '../constants';
+import { API_BASE_URL, ACCESS_TOKEN, GET_PRICE_LINK } from '../constants';
 
 const request = (options) => {
     const headers = new Headers({
@@ -69,6 +69,13 @@ export function updateMsg(messageRequest) {
 export function checkPromocode(promocode) {
     return request({
         url: API_BASE_URL + "/promocode-service/check?promocode=" + promocode,
+        method: 'GET'
+    });
+}
+
+export function getPrice(country, licenseType, period) {
+    return request({
+        url: GET_PRICE_LINK + `?country=${country}&licenseType=${licenseType}&period=${period}`,
         method: 'GET'
     });
 }
