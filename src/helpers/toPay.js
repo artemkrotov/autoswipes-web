@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import {
     ACCESS_TOKEN,
     BUY_DATE,
@@ -20,12 +19,8 @@ export default () => {
         return true;
     }
 
-    const { t } = useTranslation();
-
     if(localStorage.getItem(IS_BUYING)) {
-
-        let args = '?';
-        args += 'country=' + t('rates.country');
+        let args = '?country=RUS';
 
         if (localStorage.getItem(PROMO_CODE)) {
             args += '&promoCode=' + localStorage.getItem(PROMO_CODE)

@@ -31,7 +31,7 @@
     "scan": "Please keep in mind that Autoswipes will only send auto messages while auto swiping. It will not send messages to people who you've already matched with.",
     "save": "Save",
     "myPromoCode": "My promocode",
-    "share": "Share this code with a friend and it will save up to 7 usd.",
+    "share": "Share this code with a friend and it will save up to 500 rubles.",
     "available": "Available\n<br />\nfor Premium!",
     "availableButton": "Buy PREMIUM",
     "changePassword": "Change Password",
@@ -73,8 +73,8 @@
     "forgotSend": "Send"
   },
   "rates": {
-    "saving1": "Saving (~4 000 руб)",
-    "saving2": "Saving (~2 000 руб)",
+    "saving1": "Saving (~2 000 rub)",
+    "saving2": "Saving (~1 000 rub)",
     "month": "month",
     "year": "year",
     "autoMessaging": "Auto Messaging",
@@ -85,14 +85,9 @@
     "sec": "1 swipes in 3 seconds",
     "autoMessaging2": "No auto messaging",
     "buy": "Buy",
-    "currencyM": "usd / month",
-    "currencyY": "usd / year",
-    "needAuth": "Log in first!",
-    "country" : "ENG",
-    "priceSM" : "4.3",
-    "priceSY" : "22.9",
-    "pricePM" : "8.6",
-    "pricePY" : "45.7"
+    "currencyM": "rub / month",
+    "currencyY": "rub / year",
+    "needAuth": "Log in first!"
   },
   "validation": {
     "EMAIL_ALREADY_EXIST": "E-mail is already in use",
