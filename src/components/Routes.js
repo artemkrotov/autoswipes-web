@@ -68,7 +68,7 @@ function LegacyRoutes () {
                 atActive={{ opacity: 1 }}
                 className="route-wrapper"
             >
-                <Route exact path='/' component={ Login } />
+                <Route exact path='/' component={ Register } />
                 <Route path='/login' component={ Login } />
                 <Route path='/register' component={ Register } />
                 <Route path="/oauth2/redirect" component={ OAuth2RedirectHandler } />
